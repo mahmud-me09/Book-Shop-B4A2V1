@@ -18,8 +18,10 @@ const addProductIntoDB = async (product: TProduct) => {
 };
 
 const updateAProductOnDB = async (id: string, updateData:Object) => {
+  
   const result = await ProductModel.updateOne({ _id: new ObjectId(id) },{$set:updateData});
-  return result;
+  const data = await ProductModel.findOne({ _id: new ObjectId(id) });
+  return {result,data};
 };
 
 export const ProductServices = {
