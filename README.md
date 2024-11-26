@@ -1,8 +1,10 @@
-### The live link is: 
+### The live link is: https://bookstore-api-nine.vercel.app
 
-### API for product: 
+### For api Endpoints:
+1. Get All: /products
+2. Get as per Query: /products?title=title&category=category&author=author
+3. Get, Update or delete a product: /products/productId
 
-### API for Order:
 
 ### How to setup the project locally:
 
