@@ -19,14 +19,23 @@ const addProductIntoDB = async (product: TProduct) => {
 
 const updateAProductOnDB = async (id: string, updateData:Object) => {
   
-  const result = await ProductModel.updateOne({ _id: new ObjectId(id) },{$set:updateData});
+  const result = await ProductModel.updateOne(
+    { _id: new ObjectId(id) },
+    { $set: updateData },
+    { runValidators: true },
+  );
   const data = await ProductModel.findOne({ _id: new ObjectId(id) });
   return {result,data};
 };
+
+const deleteAProductFromDB = async (id:string) =>{
+  await ProductModel.deleteOne({_id: new ObjectId(id)})
+}
 
 export const ProductServices = {
   addProductIntoDB,
   getProductFromDB,
   getAProductFromDB,
   updateAProductOnDB,
+  deleteAProductFromDB,
 };

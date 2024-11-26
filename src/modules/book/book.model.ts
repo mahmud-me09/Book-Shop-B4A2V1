@@ -28,9 +28,9 @@ const ProductSchema = new Schema<TProduct>(
     price: {
       type: Number,
       required: true,
+      min:0,
       validate: {
         validator: (value: number) => {
-          // price is a positive number
           return value > 0;
         },
         message: 'Price must be a positive number',
@@ -54,6 +54,7 @@ const ProductSchema = new Schema<TProduct>(
     quantity: {
       type: Number,
       required: true,
+      min:0,
       validate: {
         validator: (value: number) => {
           // Quantity is a non-negative integer

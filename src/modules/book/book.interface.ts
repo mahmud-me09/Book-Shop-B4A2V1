@@ -6,13 +6,13 @@ type Category =
   | 'Religious';
 
 interface TProduct {
-  title: string; // The title of the book
-  author: string; // The author of the book
-  price: number; // Price of the book
-  category: Category; // The genre or category of the book
-  description: string; // A brief description of the book
-  quantity: number; // Quantity of the book available
-  inStock: boolean; // Indicates if the book is in stock
+  title: string;
+  author: string;
+  price: number; 
+  category: Category;
+  description: string; 
+  quantity: number;
+  inStock: boolean;
 }
 
 export default TProduct
